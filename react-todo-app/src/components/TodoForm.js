@@ -20,7 +20,6 @@ function TodoForm ( props ) {
       props.addTodo(newTodo)
       setTodo({ ...todo, task: "" })
     }
-    console.log(todo)
   }
 
   return (
