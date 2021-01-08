@@ -17,10 +17,9 @@ function Todo( {todo, togglecomplete, removeTodo } ) {
       <li
         style={{
           listStyle: "none",
-          color: "white",
           textDecoration: todo.completed? "line-through" : null,
         }}
-      >{todo.task}</li>
+      >{todo.task[0].toUpperCase()+todo.task.slice(1)} -- {todo.date}</li>
       <button onClick={handleRemoveClick}>x</button>
     </div>
   );

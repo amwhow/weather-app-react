@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LOCAL_STORAGE_KEY = 'react-todo-app';
 
@@ -32,8 +33,9 @@ function App() {
           return {
             ...todo,
             completed: !todo.completed
-          }
+          };
         }
+        return todo;
       })
     );
   }
@@ -44,7 +46,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         <p>React Todo App</p>
         <TodoForm addTodo={addTodo} />
         <TodoList 
@@ -52,7 +53,6 @@ function App() {
           togglecomplete={togglecomplete}
           removeTodo={removeTodo}
         />
-      </header>
     </div>
   );
 }

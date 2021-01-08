@@ -6,6 +6,7 @@ function TodoForm ( props ) {
   const [todo, setTodo] = useState({
     id: "",
     task: "",
+    date: "",
     completed: false,
   });
 
@@ -15,10 +16,11 @@ function TodoForm ( props ) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newTodo = {...todo, id: uuid()}
+    const newTodo = {...todo, id: uuid(), date: new Date().toLocaleDateString()}
+    console.log(newTodo)
     if (todo.task.trim()) {
       props.addTodo(newTodo)
-      setTodo({ ...todo, task: "" })
+      setTodo({ ...todo, task: ""})
     }
   }
 
