@@ -1,4 +1,5 @@
 import React from 'react' 
+import Button from 'react-bootstrap/Button';
 
 function Todo( {todo, togglecomplete, removeTodo } ) {
   function handleCheckboxClick() {
@@ -20,7 +21,7 @@ function Todo( {todo, togglecomplete, removeTodo } ) {
           textDecoration: todo.completed? "line-through" : null,
         }}
       >{todo.task[0].toUpperCase()+todo.task.slice(1)} -- {todo.date}</li>
-      <button onClick={handleRemoveClick}>x</button>
+      <Button onClick={handleRemoveClick} size="sm">x</Button>
     </div>
   );
 }
